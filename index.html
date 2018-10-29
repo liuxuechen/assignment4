@@ -1,0 +1,121 @@
+<html>
+
+
+  <head>
+    <style type="text/css">
+    body
+    {
+    background-color:#98C1F0;
+    }
+    h1{margin-left:350px;font-size:50;font-family: sans-serif}
+    ul{position:absolute;}
+    ul.navbar li {
+      background: white;
+      margin: 0.5em 0;
+      padding: 0.3em;
+      border-right: 1em solid black }
+
+      ul.navbar li:hover {
+        background: orange}
+
+    ul.navbar a {  text-decoration: none }
+    a:link {color: #98C1F0 }
+    a:visited { color: :purple }
+    </style>
+<title>Explore University in HongKong</title>
+<h1>Explore University in HongKong</h1>
+<ul class="navbar">
+  <li><a href="takingphoto.html">TAKING PHOTO</a>
+  <li><a href="eating.html">EATING</a>
+  <li><a href="visiting.html">VISITING</a>
+  <li><a href="souvenir.html">SOUVENIR</a>
+    <li><a href="register.html">REGISTER HERE</a>
+      <li><a href="review.html">ADD REVIEW</a>
+</ul>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div align="center" ><iframe class="airtable-embed" src="https://airtable.com/embed/shrJQWIT35gBKO6Aw?backgroundColor=cyan&viewControls=on" frameborder="0" onmousewheel="" width="75%" height="1050"
+   style="background: transparent; border: 0px solid #ccc;"></iframe>
+</div>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawSeriesChart);
+
+
+ function drawSeriesChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['ID', '游玩选择', '非本地生比例', '校园风格',     '游览时长（小时）'],
+        ['CUHK',          13,              18,                '自然风景',        4.5],
+        ['HKU',           11,              21,                '人文特色',            3.5],
+        ['HKUST',          6,              25,                '自然风景',              4],
+        ['PolyU',    7,              12,      '未来设计感',    1.5],
+        ['LingnanU',   5,              9,         '人文特色',         1],
+        ['CityU',   6,              14,       '未来设计感',    1.5],
+        ['HKBU',    5,              13,      '人文特色',    2.5],
+        ['EdU',    11,              4,       '人文特色',    1.5]
+
+      ]);
+
+      var options = {
+        title: '香港八高校非本地生比例、游览时长及校园风格 ' ,
+        hAxis: {title: '游玩选择（个）'},
+        vAxis: {title: '非本地生比例（%）'},
+        bubble: {textStyle: {fontSize: 11} }
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlevuX4GjgylfNTkTeQdNPbZQMN6IBMQ4&callback=initMap"
+    type="text/javascript"></script>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+       <script type='text/javascript'>
+        google.charts.load('current', {
+          'packages': ['geochart'],
+
+          'mapsApiKey': 'AIzaSyAlevuX4GjgylfNTkTeQdNPbZQMN6IBMQ4'
+        });
+        google.charts.setOnLoadCallback(drawMarkersMap);
+
+         function drawMarkersMap() {
+         var data = google.visualization.arrayToDataTable([
+           ['University',    '建校历史（年）','面积（公顷）' ],
+           ['HKU',         106,53.1],
+           ['CUHK',         55,137.7],
+           ['HKUST',        27,60],
+           ['PolyU',      81 ,9.4 ],
+            ['LingnanU',     23, 3.4],
+              ['CityU',     34,15.6],
+              ['HKBU',       62,5.7],
+                 ['EdU',    21,12.5]
+         ]);
+
+         var options = {
+           region: 'HK',
+           displayMode: 'markers',
+           colorAxis: {colors: ['pink', 'red']}
+         };
+
+         var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+         chart.draw(data, options);
+       };
+       </script>
+  </head>
+  <body >
+
+  </br>
+  </br>
+  </br>
+  </br>
+
+ <div id="chart_div" style=" margin-left:250px; width: 1000px; height: 500px;"></div>
+</br>
+</br>
+</br>
+</br>
+    <div id="series_chart_div" style="margin-left:250px; width: 1000px; height: 500px; "></div>
+
+</body>
+</html>
